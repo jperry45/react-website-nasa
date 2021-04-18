@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/react-website-nasa/static/css/main.6b9762a5.chunk.css",
+    "main.js": "/react-website-nasa/static/js/main.3e604b5d.chunk.js",
+    "main.js.map": "/react-website-nasa/static/js/main.3e604b5d.chunk.js.map",
+    "runtime-main.js": "/react-website-nasa/static/js/runtime-main.2bbf1460.js",
+    "runtime-main.js.map": "/react-website-nasa/static/js/runtime-main.2bbf1460.js.map",
+    "static/css/2.9fca9f18.chunk.css": "/react-website-nasa/static/css/2.9fca9f18.chunk.css",
+    "static/js/2.0ce83657.chunk.js": "/react-website-nasa/static/js/2.0ce83657.chunk.js",
+    "static/js/2.0ce83657.chunk.js.map": "/react-website-nasa/static/js/2.0ce83657.chunk.js.map",
+    "index.html": "/react-website-nasa/index.html",
+    "precache-manifest.0daf065048958f66e4f0ea089d4eac31.js": "/react-website-nasa/precache-manifest.0daf065048958f66e4f0ea089d4eac31.js",
+    "service-worker.js": "/react-website-nasa/service-worker.js",
+    "static/css/2.9fca9f18.chunk.css.map": "/react-website-nasa/static/css/2.9fca9f18.chunk.css.map",
+    "static/css/main.6b9762a5.chunk.css.map": "/react-website-nasa/static/css/main.6b9762a5.chunk.css.map",
+    "static/js/2.0ce83657.chunk.js.LICENSE.txt": "/react-website-nasa/static/js/2.0ce83657.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2bbf1460.js",
+    "static/css/2.9fca9f18.chunk.css",
+    "static/js/2.0ce83657.chunk.js",
+    "static/css/main.6b9762a5.chunk.css",
+    "static/js/main.3e604b5d.chunk.js"
+  ]
+}
