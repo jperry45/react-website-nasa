@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/react-website-nasa/static/css/main.216eaec1.chunk.css",
-    "main.js": "/react-website-nasa/static/js/main.eda458f6.chunk.js",
-    "main.js.map": "/react-website-nasa/static/js/main.eda458f6.chunk.js.map",
+    "main.css": "/react-website-nasa/static/css/main.3c17b7ae.chunk.css",
+    "main.js": "/react-website-nasa/static/js/main.42bb398f.chunk.js",
+    "main.js.map": "/react-website-nasa/static/js/main.42bb398f.chunk.js.map",
     "runtime-main.js": "/react-website-nasa/static/js/runtime-main.2bbf1460.js",
     "runtime-main.js.map": "/react-website-nasa/static/js/runtime-main.2bbf1460.js.map",
     "static/css/2.9fca9f18.chunk.css": "/react-website-nasa/static/css/2.9fca9f18.chunk.css",
-    "static/js/2.8bf6e707.chunk.js": "/react-website-nasa/static/js/2.8bf6e707.chunk.js",
-    "static/js/2.8bf6e707.chunk.js.map": "/react-website-nasa/static/js/2.8bf6e707.chunk.js.map",
+    "static/js/2.121af6c6.chunk.js": "/react-website-nasa/static/js/2.121af6c6.chunk.js",
+    "static/js/2.121af6c6.chunk.js.map": "/react-website-nasa/static/js/2.121af6c6.chunk.js.map",
     "index.html": "/react-website-nasa/index.html",
-    "precache-manifest.818e584ac809fd110d1f9311738f45e4.js": "/react-website-nasa/precache-manifest.818e584ac809fd110d1f9311738f45e4.js",
+    "precache-manifest.af0334c216e251e2dc34c0bc56093785.js": "/react-website-nasa/precache-manifest.af0334c216e251e2dc34c0bc56093785.js",
     "service-worker.js": "/react-website-nasa/service-worker.js",
     "static/css/2.9fca9f18.chunk.css.map": "/react-website-nasa/static/css/2.9fca9f18.chunk.css.map",
-    "static/css/main.216eaec1.chunk.css.map": "/react-website-nasa/static/css/main.216eaec1.chunk.css.map",
-    "static/js/2.8bf6e707.chunk.js.LICENSE.txt": "/react-website-nasa/static/js/2.8bf6e707.chunk.js.LICENSE.txt",
+    "static/css/main.3c17b7ae.chunk.css.map": "/react-website-nasa/static/css/main.3c17b7ae.chunk.css.map",
+    "static/js/2.121af6c6.chunk.js.LICENSE.txt": "/react-website-nasa/static/js/2.121af6c6.chunk.js.LICENSE.txt",
     "static/media/App.css": "/react-website-nasa/static/media/space.c658a769.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.2bbf1460.js",
     "static/css/2.9fca9f18.chunk.css",
-    "static/js/2.8bf6e707.chunk.js",
-    "static/css/main.216eaec1.chunk.css",
-    "static/js/main.eda458f6.chunk.js"
+    "static/js/2.121af6c6.chunk.js",
+    "static/css/main.3c17b7ae.chunk.css",
+    "static/js/main.42bb398f.chunk.js"
   ]
 }
