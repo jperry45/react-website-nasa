@@ -8,15 +8,17 @@ export default class NEASubSection extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			asteroids: []
+			asteroids: [],
+			objectsPerPage: 5
 		}
+		this.sortByDistance = this.sortByDistance.bind(this);
 	}
 
 	asteroid(data) {
 		return (
 		  <a className="options" href={data.data.nasa_jpl_url}>
-		  Name: {data.data.name}
-		  <br />Distance: {data.data.close_approach_data[0].miss_distance.astronomical}AU from Earth</a>
+		    Name: "{data.data.name}" &nbsp; {data.data.close_approach_data[0].miss_distance.astronomical.substring(0,5)}AU from Earth
+		  </a>
 		);
 	}
 
@@ -28,8 +30,8 @@ export default class NEASubSection extends React.Component {
 			    data={this.state.asteroids}
 			    RenderComponent={this.asteroid}
 			    title="Posts"
-			    pageLimit={5}
-			    dataLimit={4}
+			    pageLimit={Math.floor(this.state.asteroids.length / this.state.objectsPerPage) + 1}
+			    dataLimit={this.state.objectsPerPage}
 			  />
 		}
 		return (
@@ -66,9 +68,35 @@ export default class NEASubSection extends React.Component {
 		  .then(res => res.json())
 		  .then(
 		    (result) => {
+		    	var sortedAsteroids = this.sortByDistance(result.near_earth_objects[formattedDate]);
 		      context.setState({
-		      	asteroids: result.near_earth_objects[formattedDate]
+		      	asteroids: sortedAsteroids
 		      });
 		    })
+	}
+
+	sortByDistance(dataToSort) {
+		var dataToReturn = [];
+		var closest;
+		var currentDistance;
+		var closestDistance;
+		while (dataToSort.length > 0) {
+			dataToSort.forEach(function(asteroid) {
+		                   if (!closest) {
+		                   	closest = asteroid;
+		                   } else {
+		                   	currentDistance = parseFloat(asteroid.close_approach_data[0].miss_distance.astronomical.substring(0,5));
+		                   	closestDistance = parseFloat(closest.close_approach_data[0].miss_distance.astronomical.substring(0,5));
+		                   	if (currentDistance < closestDistance) {
+		                   		closest = asteroid;
+		                   	}
+		                   }
+		    });
+		    dataToReturn.push(closest);
+		    var index = dataToSort.indexOf(closest);
+		    dataToSort.splice(index, 1);
+		    closest = undefined;
+		}
+		return dataToReturn;
 	}
 }
