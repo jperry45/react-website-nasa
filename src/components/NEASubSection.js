@@ -9,6 +9,7 @@ export default class NEASubSection extends React.Component {
 		super(props);
 		this.state = {
 			asteroids: [],
+			dataLoaded: false,
 			objectsPerPage: 5
 		}
 		this.sortByDistance = this.sortByDistance.bind(this);
@@ -33,6 +34,8 @@ export default class NEASubSection extends React.Component {
 			    pageLimit={Math.floor(this.state.asteroids.length / this.state.objectsPerPage) + 1}
 			    dataLimit={this.state.objectsPerPage}
 			  />
+		} else if (this.state.asteroids.length == 0 && this.state.dataLoaded) {
+			pagination = <p>No asteroids found for {this.props.date} </p>
 		}
 		return (
 			<>
@@ -45,6 +48,7 @@ export default class NEASubSection extends React.Component {
 	}
 
 	fetch() {
+		this.state.dataLoaded = true;
 		var context = this;
 
 		var month = this.props.date.substring(0, this.props.date.indexOf('/'));

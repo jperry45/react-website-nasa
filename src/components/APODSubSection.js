@@ -9,7 +9,8 @@ export default class APODSubSection extends React.Component {
 		this.state = {
 			url: "",
 			explanation: "",
-			title: ""
+			title: "",
+			mediaType: ""
 		}
 	}
 
@@ -22,7 +23,8 @@ export default class APODSubSection extends React.Component {
 			  <p>
 			    {this.state.title}
 			  </p>
-			  <img src={this.state.url} className="nasa"/>
+			  {this.state.mediaType !== "video" ? <img src={this.state.url} className="nasa"/>
+			  	: <span>(Media Type Not Supported!)</span>}
 			</>
 		);
 	}
@@ -51,7 +53,8 @@ export default class APODSubSection extends React.Component {
 		      context.setState({
 		      	url: result.url,
 		      	explanation: result.explanation,
-		      	title: result.title
+		      	title: result.title,
+		      	mediaType: result.media_type
 		      });
 		    })
 	}
