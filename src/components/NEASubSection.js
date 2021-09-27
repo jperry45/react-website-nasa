@@ -10,9 +10,11 @@ export default class NEASubSection extends React.Component {
 		this.state = {
 			asteroids: [],
 			dataLoaded: false,
-			objectsPerPage: 5
+			objectsPerPage: 5,
+			pagination: null
 		}
 		this.sortByDistance = this.sortByDistance.bind(this);
+		this.updatePagination = this.updatePagination.bind(this);
 	}
 
 	asteroid(data) {
@@ -25,24 +27,12 @@ export default class NEASubSection extends React.Component {
 
 
 	render() {
-		let pagination;
-		if (this.state.asteroids !== undefined && this.state.asteroids.length != 0) {
-			pagination = <Pagination
-			    data={this.state.asteroids}
-			    RenderComponent={this.asteroid}
-			    title="Posts"
-			    pageLimit={Math.floor(this.state.asteroids.length / this.state.objectsPerPage) + 1}
-			    dataLimit={this.state.objectsPerPage}
-			  />
-		} else if (this.state.asteroids.length == 0 && this.state.dataLoaded) {
-			pagination = <p>No asteroids found for {this.props.date} </p>
-		}
 		return (
 			<>
 			  <Button onClick={this.fetch.bind(this)}>
 			  	Find Asteroids
 			  </Button>
-			  {pagination}
+			  {this.state.pagination}
 			</>
 		);
 	}
@@ -76,7 +66,26 @@ export default class NEASubSection extends React.Component {
 		      context.setState({
 		      	asteroids: sortedAsteroids
 		      });
+		      this.updatePagination();
 		    })
+	}
+
+	updatePagination() {
+		let pagination;
+		if (this.state.asteroids !== undefined && this.state.asteroids.length != 0) {
+			pagination = <Pagination
+			    data={this.state.asteroids}
+			    RenderComponent={this.asteroid}
+			    title="Posts"
+			    pageLimit={Math.floor(this.state.asteroids.length / this.state.objectsPerPage) + 1}
+			    dataLimit={this.state.objectsPerPage}
+			  />
+		} else if (this.state.asteroids.length == 0 && this.state.dataLoaded) {
+			pagination = <p>No asteroids found for {this.props.date} </p>
+		}
+		this.setState({
+			pagination: pagination
+		});
 	}
 
 	sortByDistance(dataToSort) {
