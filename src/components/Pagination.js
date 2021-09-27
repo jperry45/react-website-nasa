@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import './Pagination.css';
 
 function Pagination({ data, RenderComponent, title, pageLimit, dataLimit }) {
-  const [pages] = useState(Math.round(data.length / dataLimit));
+  const addExtraPage = data.length % dataLimit !== 0 ? 1 : 0;
+  const [pages] = useState(Math.floor(data.length / dataLimit) + addExtraPage);
   const [currentPage, setCurrentPage] = useState(1);
+  console.log(currentPage);
+  console.log(pages);
 
   function goToNextPage() {
   	setCurrentPage((page) => page + 1);
