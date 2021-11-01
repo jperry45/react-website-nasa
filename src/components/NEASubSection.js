@@ -46,12 +46,12 @@ export default class NEASubSection extends React.Component {
 			month = "0" + month;
 		}
 
-		var day = this.props.date.substring(this.props.date.indexOf('/') + 1, this.props.date.indexOf('/', 2))
+		var day = this.props.date.substring(this.props.date.indexOf('/') + 1, this.props.date.indexOf('/', this.props.date.length - 5))
 		if (day.length < 2) {
 			day = "0" + day;
 		}
 
-		var year = this.props.date.substring(this.props.date.indexOf('/', 2) + 1);
+		var year = this.props.date.substring(this.props.date.indexOf('/', this.props.date.length - 5) + 1);
 
 		var formattedDate = year + "-" + month + "-" + day;
 
