@@ -24,7 +24,8 @@ export default class APODSubSection extends React.Component {
 			    {this.state.title}
 			  </p>
 			  {this.state.mediaType !== "video" ? <img src={this.state.url} className="nasa"/>
-			  	: <span>(Media Type Not Supported!)</span>}
+			  	: <iframe src={this.state.url} frameborder='0' allow='autoplay; encrypted-media'
+			  		allowfullscreen title='video' width='853' height='480'/>}
 			</>
 		);
 	}
