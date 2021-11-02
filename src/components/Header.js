@@ -9,7 +9,7 @@ function Header() {
       <nav className='navbar'>
         <div className='navbar-container'>
           <Link to='/' className='navbar-logo'>
-            React NASA Website
+            React NASA Website&nbsp;
             <i class='fas fa-rocket' />
           </Link>
         </div>
